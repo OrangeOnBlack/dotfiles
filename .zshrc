@@ -5,13 +5,7 @@ export LC_CTYPE=en_US.UTF-8
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == '"Ubuntu"' ]]; then
-        export ZSH="~/.oh-my-zsh"
-    fi
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    export ZSH="/Users/millian/.oh-my-zsh"
-fi
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

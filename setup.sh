@@ -19,3 +19,10 @@ chsh -s $(which zsh)
 git clone https://github.com/OrangeOnBlack/dotfiles
 cp dotfiles/.* ~/ 2>/dev/null # suppress 'cp: dotfiles/.git is a directory (not copied).'
 rm -rf dotfiles
+
+# add public ssh key
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == '"Ubuntu"' ]]; then
+        curl https://github.com/OrangeOnBlack.keys >> ~/.ssh/authorized_keys
+    fi
+fi

@@ -34,5 +34,15 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
 fi
 
+# set shell for tmux by adding to .tmux.conf
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == '"Ubuntu"' ]]; then
+        sed -i '1s/^/set-option -g default-shell \/usr\/bin\/zsh \n\n/' $HOME/.tmux.conf
+    fi
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+        sed -i '1s/^/set-option -g default-shell \/usr\/local\/bin\/zsh \n\n/' $HOME/.tmux.conf
+fi
+
+
 printf "${ORANGE}To switch to Zsh run${NC}\n"
 printf "${ORANGE}chsh -s $(which zsh)${NC}\n"

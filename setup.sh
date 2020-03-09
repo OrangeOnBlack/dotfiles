@@ -1,5 +1,9 @@
 #!/bin/bash
 
+ORANGE='\033[0;33m'
+RED='\033[0;31m'
+NC='\033[0m'
+
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == '"Ubuntu"' ]]; then
         echo "Ubuntu detected"
@@ -30,5 +34,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     fi
 fi
 
-echo 'To switch to Zsh run'
-echo 'chsh -s $(which zsh)'
+printf "${ORANGE}To switch to Zsh run${NC}\n"
+printf "${ORANGE}chsh -s $(which zsh)${NC}"

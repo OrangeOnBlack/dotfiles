@@ -43,6 +43,5 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         sed -i '1s/^/set-option -g default-shell \/usr\/local\/bin\/zsh \n\n/' $HOME/.tmux.conf
 fi
 
-
 printf "${ORANGE}To switch to Zsh run${NC}\n"
 printf "${ORANGE}chsh -s $(which zsh)${NC}\n"

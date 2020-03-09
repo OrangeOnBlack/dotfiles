@@ -1,6 +1,8 @@
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
+export EDITOR='vim'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -121,6 +123,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 fi
 export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+
+alias ghc='git config user.name "OrangeOnBlack"; git config user.email "github@OrangeOnBlack.net"; git commit -m'
+alias glc='git config user.name "OrangeOnBlack"; git config user.email "gitlab@OrangeOnBlack.net"; git commit -m'
 
 weather(){
     curl http://v2.wttr.in/$1;

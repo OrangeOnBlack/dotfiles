@@ -6,7 +6,7 @@ NC='\033[0m'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     if [[ $(awk -F= '/^NAME/{print $2}' /etc/os-release) == '"Ubuntu"' ]]; then
-        echo "Ubuntu detected"
+        printf "${ORANGE}Ubuntu detected${NC}\n"
         apt-get update && \
         apt-get install -y git && \
         apt-get install -y zsh tmux vim htop
@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
         git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
     fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-        echo "MacOS detected"
+        printf "${ORANGE}MacOS detected${NC}\n"
         brew install zsh
         sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         brew tap sambadevi/powerlevel9k
@@ -35,4 +35,4 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 fi
 
 printf "${ORANGE}To switch to Zsh run${NC}\n"
-printf "${ORANGE}chsh -s $(which zsh)${NC}"
+printf "${ORANGE}chsh -s $(which zsh)${NC}\n"

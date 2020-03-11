@@ -1,6 +1,6 @@
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-
+export TERM="xterm-256color"
 export EDITOR='vim'
 
 # If you come from bash you might have to change your $PATH.

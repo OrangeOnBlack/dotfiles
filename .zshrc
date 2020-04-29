@@ -132,3 +132,5 @@ weather(){
 }
 
 set mark-directories on
+
+export PATH="/usr/local/opt/ruby/bin:$PATH
